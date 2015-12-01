@@ -12,7 +12,9 @@ In an effort to make this contest experience feel like a real software delivery 
 -----
 
 ## Initial questions submitted to IDT
+
 Due Tuesday, December 8th @ 11:59pm
+
 Your team should submit a list of questions to IDT that you would like to ask to get a better understanding of IDT’s vision for the software solution. All questions should be emailed to contest.user@idtus.com by 11:59pm on Tuesday, December 8th. IDT will email private answers back to each team individually. Any questions that your team has after December 8th should be asked on the public forum of the contest website. 
 
 Example question: What do you mean by “a solution for the other side”?
@@ -20,20 +22,26 @@ Example answer: Well we haven’t decided yet if a web UI is better than a deskt
 Question critique: Consider offering ideas or examples of things that you could do – help the customer come up with ideas!
 
 ## Software requirements submitted to IDT
+
 Due Tuesday, December 15th @ 11:59pm
+
 Your team should submit a list of software requirements that describe what you plan to deliver based on your understanding of the task. Software requirements define how the software should behave and guide testing. All software requirements should be emailed to contest.user@idtus.com by 11:59pm on Tuesday, December 15th. IDT will publically release the final list of requirements after requirements have been collected from all teams (note: the final requirements may differ from the ones that you provide – to bound scope, to allow everyone to finish on time, and to steer everyone toward the same goal). Be careful: if you begin coding your solution before you have received the final requirements from IDT, the final requirements may indicate another direction...
 
 Example requirement: The software solution shall calculate the current distance between the package and the destination.
 Requirement critique: Simple, straight to the point and testable.
 
 ## Development status submitted to IDT
+
 Due between Monday, January 18th and Friday, January 22nd
+
 During the development process, software companies often keep the customer aware of the progress through status updates. IDT would like you to fill out this development status form during the week of January 18th – January 22nd and email it to contest.user@idtus.com.
 
 Example status update: IDT has provided this completed development status form as an example for what we are expecting in terms of a status update.
 
 ## Software solution submitted to GitHub
+
 Due Friday, February 12th @ 11:59pm
+
 This year, final software solutions will ultimately be submitted through GitHub. We encourage your team to set up a GitHub account at the beginning of the project and to use it as a central repository to support collaboration and version control through development. We expect that you will email a link to your GitHub repository to contest.user@idtus.com by 11:59pm on Friday, February 12th as a means of delivery. 
 Your final solution can be implemented in any combination of programming languages and technologies that you see fit. IDT highly encourages the use of third-party tools that have appropriate licenses.
 Your final solution should include:
