@@ -50,7 +50,7 @@ public class User
    /**
     * Only returns encryted passwords
     * 
-    * @return
+    * @return encrypted password or null if password is not encrypted
     */
    public String getPassword()
    {
