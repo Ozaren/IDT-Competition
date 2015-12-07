@@ -10,7 +10,7 @@ public class Package
    private User   owner;
    private String item;
    private GPS    gps;
-   private long   id;
+   private final long   id;
                   
    public Package(User owner, String item, long id)
    {
