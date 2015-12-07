@@ -8,6 +8,7 @@ import gameOfLife.packageTracker.exceptions.InvalidUserNameException.InvalidUser
 public class User
 {
    private final HashMap<String , User> users = new HashMap<>();
+   //Do not add a getter for password, this defeats the purpose of password
    private String                       name, userName, password;
                                         
    public User(String name, String userName, String password) throws InvalidUserNameException
@@ -26,12 +27,43 @@ public class User
          encryptPassword();
    }
    
+   public String getUserName()
+   {
+      return userName;
+   }
+   
+   public String getName()
+   {
+      return name;
+   }
+   
    public boolean validatePassword(String validate)
    {
       return password.equals(validate);
    }
    
-   private void encryptPassword() {
-      
+   private void encryptPassword()
+   {
+   
+   }
+   
+   @Override
+   public String toString()
+   {
+      return super.toString();
+   }
+   
+   @Override
+   public boolean equals(Object obj)
+   {
+      if(obj instanceof User)
+      {
+         User other = (User) obj;
+         return userName.equals(other.userName); // user names are unique so no need to check anything else
+      }
+      else
+      {
+         return false;
+      }
    }
 }
