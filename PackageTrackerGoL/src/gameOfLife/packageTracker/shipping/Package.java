@@ -8,8 +8,8 @@ package gameOfLife.packageTracker.shipping;
 public class Package
 {
    private User   owner;
-   private String item;
    private GPS    gps;
+   private String item;
    private final long   id;
                   
    public Package(User owner, String item, long id)
