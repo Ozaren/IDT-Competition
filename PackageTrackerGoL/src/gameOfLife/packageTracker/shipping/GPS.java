@@ -6,5 +6,5 @@ package gameOfLife.packageTracker.shipping;
  */
 public class GPS
 {
-   
+   private double latitude , longtitude;
 }
