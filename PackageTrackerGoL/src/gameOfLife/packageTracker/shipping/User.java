@@ -1,6 +1,8 @@
 package gameOfLife.packageTracker.shipping;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 import gameOfLife.packageTracker.exceptions.InvalidUserNameException;
 import gameOfLife.packageTracker.exceptions.InvalidUserNameException.InvalidUserNameType;
@@ -8,8 +10,11 @@ import gameOfLife.packageTracker.exceptions.InvalidUserNameException.InvalidUser
 public class User
 {
    private final HashMap<String , User> users = new HashMap<>();
-   //Do not add a getter for password, this defeats the purpose of password
-   private String                       name, userName, password;
+                                              
+   private String                       name, userName;
+   //never return a decrypted password
+   private String                       password;
+   private boolean                      isPasswordEncrypted;
                                         
    public User(String name, String userName, String password) throws InvalidUserNameException
    {
@@ -25,6 +30,7 @@ public class User
       this.password = password;
       if(encryptPassword)
          encryptPassword();
+      isPasswordEncrypted = encryptPassword;
    }
    
    public String getUserName()
@@ -42,9 +48,54 @@ public class User
       return password.equals(validate);
    }
    
-   private void encryptPassword()
+   /**
+    * Only returns encryted passwords
+    * 
+    * @return
+    */
+   public String getPassword()
    {
+      if(isPasswordEncrypted)
+         return password;
+      else
+         return null;
+   }
    
+   public boolean isPasswordEncrypted()
+   {
+      return isPasswordEncrypted;
+   }
+   
+   public String encryptPassword() // psuedo-random char-shift
+   {
+      if(isPasswordEncrypted)
+         return password;
+      Random random = new Random(userName.hashCode()); // for encrypting password the seed must be something unique, say the username's hashcode, that's unique
+      
+      char[] password = this.password.toCharArray();
+      for(int i = 0; i < password.length; i++)
+      {
+         password[i] += random.nextInt() % Character.MAX_VALUE;
+         password[i] %= Character.MAX_VALUE;
+      }
+      this.password = new String(password);
+      return this.password;
+   }
+   
+   public void decryptPassword()
+   {
+      if(!isPasswordEncrypted)
+         return;
+      Random random = new Random(userName.hashCode()); // for encrypting password the seed must be something unique, say the username's hashcode, that's unique
+      
+      char[] password = this.password.toCharArray();
+      for(int i = 0; i < password.length; i++)
+      {
+         password[i] -= random.nextInt() % Character.MAX_VALUE;
+         password[i] += Character.MAX_VALUE + 1;
+         password[i] %= Character.MAX_VALUE;
+      }
+      this.password = new String(password);
    }
    
    @Override
