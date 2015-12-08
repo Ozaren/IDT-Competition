@@ -8,14 +8,14 @@ package gameOfLife.packageTracker.shipping;
  */
 public class GPS
 {
-   private double latitude , longtitude;
+   private double latitude, longtitude;
    
    public GPS()
    {
-      this(0 , 0);
+      this(0, 0);
    }
    
-   public GPS(double latitude , double longtitude)
+   public GPS(double latitude, double longtitude)
    {
       this.latitude = latitude;
       this.longtitude = longtitude;
@@ -44,7 +44,6 @@ public class GPS
    @Override
    public String toString()
    {
-      return String.format("%.3f %s  %.3f %s" , Math.abs(latitude) ,
-            latitude > 0 ? "E" : "W" , Math.abs(longtitude) , longtitude > 0 ? "N" : "S");
+      return String.format("%.3f %s  %.3f %s", Math.abs(latitude), latitude > 0 ? "E" : "W", Math.abs(longtitude), longtitude > 0 ? "N" : "S");
    }
 }

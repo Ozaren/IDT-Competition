@@ -10,9 +10,9 @@ public class User
 {
    private final HashMap<String , User> users = new HashMap<>();
                                               
-   private String                       name, userName;
    //never return a decrypted password
    private String                       password;
+   private String                       name, userName;
    private boolean                      isPasswordEncrypted;
                                         
    public User(String name, String userName, String password) throws InvalidUserNameException
@@ -100,7 +100,7 @@ public class User
    @Override
    public String toString()
    {
-      return String.format("User Name: %s\nName: %s\nPassword: %s" , userName , name , password.replaceAll("." , "*"));
+      return String.format("User Name: %s\nName: %s\nPassword: %s", userName, name, password.replaceAll(".", "*"));
    }
    
    @Override
