@@ -20,18 +20,14 @@ public class Main {
 	   User user = null;
 	   try
       {
-         user = new User("Krishna", "Ozareb", "Password");
+         user = new User("Krishna", "Ozaren", "Password");
+         System.out.println(user);
       }
       catch(InvalidUserNameException e)
       {
          e.printStackTrace();
          return;
       }
-	   System.out.println(user.getPassword());
-	   user.encryptPassword();
-	   System.out.println(user.getPassword());
-      user.decryptPassword();
-	   System.out.println(user.getPassword());
 	   
 	}
 }

@@ -100,7 +100,7 @@ public class User
    @Override
    public String toString()
    {
-      return super.toString();
+      return String.format("User Name: %s\nName: %s\nPassword: %s" , userName , name , password.replaceAll("." , "*"));
    }
    
    @Override
