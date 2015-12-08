@@ -10,7 +10,7 @@ import gameOfLife.packageTracker.shipping.User;
  * Starts the application
  * 
  * @author Krishna
- *        
+ *         
  */
 
 public class Main
