@@ -1,6 +1,8 @@
 package gameOfLife.packageTracker.main;
 
 import gameOfLife.packageTracker.exceptions.InvalidUserNameException;
+import gameOfLife.packageTracker.shipping.GPS;
+import gameOfLife.packageTracker.shipping.Package;
 import gameOfLife.packageTracker.shipping.User;
 
 /**Main method only<br>
@@ -21,7 +23,9 @@ public class Main {
 	   try
       {
          user = new User("Krishna", "Ozaren", "Password");
-         System.out.println(user);
+         Package pack = new Package(user , "Music CD" , 153481438 , new GPS(50.4 ,  -35.1));
+         System.out.println(user + "\n");
+         System.out.println(pack);
       }
       catch(InvalidUserNameException e)
       {

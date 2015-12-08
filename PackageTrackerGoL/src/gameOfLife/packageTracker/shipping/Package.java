@@ -48,7 +48,7 @@ public class Package
    @Override
    public String toString()
    {
-      return super.toString();
+      return String.format("Owner: %s\nID: %d\nItem: %s\nGPS: %s" , owner.getUserName() , id , item , gps);
    }
    
    @Override
