@@ -15,7 +15,6 @@ import gameOfLife.packageTracker.shipping.User;
 
 public class Main
 {
-   
    /**
     * <b><i>Only</b></i> to start the application
     * 
