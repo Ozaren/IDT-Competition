@@ -1,7 +1,6 @@
 package gameOfLife.packageTracker.main;
 
 import gameOfLife.packageTracker.exceptions.InvalidUserNameException;
-import gameOfLife.packageTracker.shipping.Point;
 import gameOfLife.packageTracker.shipping.GPS;
 import gameOfLife.packageTracker.shipping.Package;
 import gameOfLife.packageTracker.shipping.User;

@@ -10,6 +10,7 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
+import gameOfLife.packageTracker.shipping.GPS;
 import gameOfLife.packageTracker.shipping.Point;
 
 public class GPXReader
@@ -35,19 +36,6 @@ public class GPXReader
       load();
    }
    
-   public static class Point
-   {
-      public final double longtitude, latitude;
-      public final String timeStamp;
-                          
-      public Point(double longtitude, double latitude, String timeStamp)
-      {
-         this.latitude = latitude;
-         this.longtitude = longtitude;
-         this.timeStamp = timeStamp;
-      }
-   }
-   
    private static class Tag
    {
       static String       longtitude, latitude, timeStamp;
@@ -66,7 +54,7 @@ public class GPXReader
    
    private static void load() throws FileNotFoundException, XMLStreamException
    {
-      Point gps;
+      GPS gps = new GPS();
       reader = factory.createXMLStreamReader(new FileInputStream(xmlfile));
       int event;
       String text = null;
@@ -109,10 +97,11 @@ public class GPXReader
                {
                   case "trkpt":
                      Tag.timeStamp = text;
+                     gps.addPoint(new Point(Double.valueOf(Tag.latitude) , Double.valueOf(Tag.longtitude) , Tag.timeStamp));
                      break;
                }
-               Tag.printAll();
-               System.out.println();
+//               Tag.printAll();
+               System.out.println(gps + "\n");
                break;
          }
       }

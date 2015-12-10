@@ -33,6 +33,11 @@ public class Point
       return longtitude;
    }
    
+   public String getTimeStamp()
+   {
+      return timeStamp;
+   }
+   
    public void setLatitude(double latitude)
    {
       this.latitude = latitude;
@@ -46,6 +51,6 @@ public class Point
    @Override
    public String toString()
    {
-      return String.format("%.3f %s  %.3f %s", Math.abs(latitude), latitude > 0 ? "E" : "W", Math.abs(longtitude), longtitude > 0 ? "N" : "S");
+      return String.format("%.3f %s  %.3f %s T-%s", Math.abs(latitude), latitude > 0 ? "E" : "W", Math.abs(longtitude), longtitude > 0 ? "N" : "S" , timeStamp);
    }
 }
