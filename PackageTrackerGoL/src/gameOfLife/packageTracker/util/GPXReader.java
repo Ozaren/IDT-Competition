@@ -41,15 +41,6 @@ public class GPXReader
       static String       longtitude, latitude, timeStamp;
       static Stack<Point> points;
       static Stack<Point> wayPoints;
-                          
-      public static void printAll()
-      {
-         System.out.println("Longtitude: " + longtitude);
-         System.out.println("Latitude: " + latitude);
-         System.out.println("Time Stamp: " + timeStamp);
-         System.out.println("Points: " + points);
-         System.out.println("Way Points: " + wayPoints);
-      }
    }
    
    private static void load() throws FileNotFoundException, XMLStreamException
@@ -100,7 +91,6 @@ public class GPXReader
                      gps.addPoint(new Point(Double.valueOf(Tag.latitude) , Double.valueOf(Tag.longtitude) , Tag.timeStamp));
                      break;
                }
-//               Tag.printAll();
                System.out.println(gps + "\n");
                break;
          }

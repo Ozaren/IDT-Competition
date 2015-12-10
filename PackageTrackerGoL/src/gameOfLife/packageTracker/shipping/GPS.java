@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 public class GPS
 {
+   private static long nextID = 0;
+   private final long id;
    private ArrayList<Point> points, wayPoints;
    
    public GPS()
    {
+      id = ++nextID;
       points = new ArrayList<>();
       wayPoints = new ArrayList<>();
    }
@@ -35,6 +38,6 @@ public class GPS
    @Override
    public String toString()
    {
-      return "Points: " + points + "\nWayPoints: " + wayPoints;
+      return "GPS " + id + ":\nPoints: " + points + "\nWayPoints: " + wayPoints;
    }
 }
