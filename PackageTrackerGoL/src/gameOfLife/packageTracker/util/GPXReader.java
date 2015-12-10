@@ -3,7 +3,6 @@ package gameOfLife.packageTracker.util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Stack;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -38,9 +37,7 @@ public class GPXReader
    
    private static class Tag
    {
-      static String       longtitude, latitude, timeStamp;
-      static Stack<Point> points;
-      static Stack<Point> wayPoints;
+      static String longtitude, latitude, timeStamp;
    }
    
    private static void load() throws FileNotFoundException, XMLStreamException
@@ -58,10 +55,6 @@ public class GPXReader
                Tag.timeStamp = null;
                switch(reader.getLocalName())
                {
-                  case "gpx":
-                     Tag.points = new Stack<>();
-                     Tag.wayPoints = new Stack<>();
-                     break;
                   case "trkpt":
                   case "wpt":
                      for(int i = 0; i < reader.getAttributeCount(); i++)
@@ -88,7 +81,7 @@ public class GPXReader
                {
                   case "trkpt":
                      Tag.timeStamp = text;
-                     gps.addPoint(new Point(Double.valueOf(Tag.latitude) , Double.valueOf(Tag.longtitude) , Tag.timeStamp));
+                     gps.addPoint(new Point(Double.valueOf(Tag.latitude), Double.valueOf(Tag.longtitude), Tag.timeStamp));
                      break;
                }
                System.out.println(gps + "\n");
