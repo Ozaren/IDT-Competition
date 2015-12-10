@@ -34,11 +34,12 @@ public class GPXReader
       load();
    }
    
-   public static class Point {
-      public final double longtitude , latitude;
+   public static class Point
+   {
+      public final double longtitude, latitude;
       public final String timeStamp;
-      
-      public Point(double longtitude , double latitude , String timeStamp)
+                          
+      public Point(double longtitude, double latitude, String timeStamp)
       {
          this.latitude = latitude;
          this.longtitude = longtitude;
@@ -48,7 +49,7 @@ public class GPXReader
    
    private static class Tag
    {
-      static String name , longtitude , latitude , timeStamp;
+      static String       name, longtitude, latitude, timeStamp;
       static Stack<Point> points;
       static Stack<Point> wayPoints;
    }
@@ -69,6 +70,9 @@ public class GPXReader
                text = reader.getText().trim();
                break;
             case XMLStreamConstants.END_ELEMENT:
+               switch(reader.getLocalName()) {
+                  case "":
+               }
                break;
          }
       }
