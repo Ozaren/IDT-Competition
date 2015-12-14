@@ -7,11 +7,11 @@ package gameOfLife.packageTracker.shipping;
 
 public class Package
 {
-   private User   owner;
-   private String item;
-   private GPS    gps;
-   private long   id;
-                  
+   private User       owner;
+   private GPS        gps;
+   private String     item;
+   private final long id;
+                      
    public Package(User owner, String item, long id)
    {
       this(owner, item, id, null);
@@ -48,7 +48,7 @@ public class Package
    @Override
    public String toString()
    {
-      return super.toString();
+      return String.format("Owner: %s\nID: %d\nItem: %s\nGPS: %s", owner.getUserName(), id, item, gps);
    }
    
    @Override

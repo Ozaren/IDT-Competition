@@ -1,6 +1,5 @@
 package gameOfLife.packageTracker.shipping;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -11,9 +10,9 @@ public class User
 {
    private final HashMap<String , User> users = new HashMap<>();
                                               
-   private String                       name, userName;
    //never return a decrypted password
    private String                       password;
+   private String                       name, userName;
    private boolean                      isPasswordEncrypted;
                                         
    public User(String name, String userName, String password) throws InvalidUserNameException
@@ -51,7 +50,7 @@ public class User
    /**
     * Only returns encryted passwords
     * 
-    * @return
+    * @return encrypted password or null if password is not encrypted
     */
    public String getPassword()
    {
@@ -101,7 +100,7 @@ public class User
    @Override
    public String toString()
    {
-      return super.toString();
+      return String.format("User Name: %s\nName: %s\nPassword: %s", userName, name, password.replaceAll(".", "*"));
    }
    
    @Override
