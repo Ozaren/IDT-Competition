@@ -1,4 +1,4 @@
-package gameOfLife.packageTracker.util.ui.guiComputer;
+package gameOfLife.packageTracker.util.ui;
 
 import javax.swing.JFrame;
 
