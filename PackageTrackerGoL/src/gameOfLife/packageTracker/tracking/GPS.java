@@ -1,6 +1,8 @@
-package gameOfLife.packageTracker.shipping;
+package gameOfLife.packageTracker.tracking;
 
 import java.util.ArrayList;
+
+import gameOfLife.packageTracker.shipping.Point;
 
 public class GPS
 {

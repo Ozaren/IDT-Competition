@@ -1,5 +1,7 @@
 package gameOfLife.packageTracker.shipping;
 
+import gameOfLife.packageTracker.tracking.GPS;
+
 /**
  * A package
  * 

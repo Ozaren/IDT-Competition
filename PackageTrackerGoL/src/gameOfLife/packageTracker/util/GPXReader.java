@@ -9,14 +9,14 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import gameOfLife.packageTracker.shipping.GPS;
 import gameOfLife.packageTracker.shipping.Point;
+import gameOfLife.packageTracker.tracking.GPS;
 
 public class GPXReader
 {
    public static void main(String[] args) throws FileNotFoundException, XMLStreamException
    {
-      load("C:\\Users\\Krishna\\Desktop\\testGPX.gpx");
+      load("E:\\Dropbox\\IDT\\Competition Info\\IDT_Winter_2016_Contest_Code\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx");
    }
    
    private static XMLStreamReader reader;
@@ -84,9 +84,9 @@ public class GPXReader
                      gps.addPoint(new Point(Double.valueOf(Tag.latitude), Double.valueOf(Tag.longtitude), Tag.timeStamp));
                      break;
                }
-               System.out.println(gps + "\n");
                break;
          }
       }
+      System.out.println(gps + "\n");
    }
 }
