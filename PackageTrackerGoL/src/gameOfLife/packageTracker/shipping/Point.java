@@ -1,5 +1,7 @@
 package gameOfLife.packageTracker.shipping;
 
+import gameOfLife.packageTracker.tracking.TimeStamp;
+
 /**
  * May be deleted
  * 
@@ -9,7 +11,7 @@ package gameOfLife.packageTracker.shipping;
 public class Point
 {
    private double latitude, longtitude;
-   private String timeStamp;
+   private TimeStamp timeStamp;
    
    public Point()
    {
@@ -20,7 +22,7 @@ public class Point
    {
       this.latitude = latitude;
       this.longtitude = longtitude;
-      this.timeStamp = timeStamp;
+      this.timeStamp = new TimeStamp(timeStamp);
    }
    
    public double getLatitude()
@@ -33,7 +35,7 @@ public class Point
       return longtitude;
    }
    
-   public String getTimeStamp()
+   public TimeStamp getTimeStamp()
    {
       return timeStamp;
    }
