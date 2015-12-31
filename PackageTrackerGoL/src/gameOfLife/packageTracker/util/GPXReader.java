@@ -9,6 +9,8 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
+import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
+
 import gameOfLife.packageTracker.shipping.Point;
 import gameOfLife.packageTracker.tracking.GPS;
 
@@ -23,16 +25,16 @@ public class GPXReader
    private static File            xmlfile;
    private static XMLInputFactory factory;
                                   
-   public static void load(String xmlloc) throws FileNotFoundException, XMLStreamException
+   public static GPS load(String xmlloc) throws FileNotFoundException, XMLStreamException
    {
-      load(new File(xmlloc));
+      return load(new File(xmlloc));
    }
    
-   private static void load(File file) throws FileNotFoundException, XMLStreamException
+   private static GPS load(File file) throws FileNotFoundException, XMLStreamException
    {
       xmlfile = file;
       factory = XMLInputFactory.newFactory();
-      load();
+      return load();
    }
    
    private static class Tag
@@ -40,9 +42,9 @@ public class GPXReader
       static String longtitude, latitude, timeStamp;
    }
    
-   private static void load() throws FileNotFoundException, XMLStreamException
+   private static GPS load() throws FileNotFoundException, XMLStreamException
    {
-      GPS gps = new GPS();
+      GPS gps = null;
       reader = factory.createXMLStreamReader(new FileInputStream(xmlfile));
       int event;
       String text = null;
@@ -79,14 +81,26 @@ public class GPXReader
             case XMLStreamConstants.END_ELEMENT:
                switch(reader.getLocalName())
                {
-                  case "trkpt":
+                  case "name":
+                     gps = new GPS(text);
+                     break;
+                  case "time":
                      Tag.timeStamp = text;
-                     gps.addPoint(new Point(Double.valueOf(Tag.latitude), Double.valueOf(Tag.longtitude), Tag.timeStamp));
+                     break;
+                  case "trkpt":
+                     try
+                     {
+                        gps.addPoint(new Point(Double.valueOf(Tag.latitude), Double.valueOf(Tag.longtitude), Tag.timeStamp));
+                     }
+                     catch(NumberFormatException | DuplicateName e)
+                     {
+                        e.printStackTrace();
+                     }
                      break;
                }
                break;
          }
       }
-      System.out.println(gps + "\n");
+      return gps;
    }
 }

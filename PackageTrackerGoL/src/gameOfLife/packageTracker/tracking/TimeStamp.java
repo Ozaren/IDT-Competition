@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class TimeStamp
+public class TimeStamp implements Comparable<TimeStamp>
 {
    private DateFormat dateFormat;
    private Calendar   stamp;
@@ -34,7 +34,6 @@ public class TimeStamp
       this.stamp.set(Calendar.MINUTE, minute);
       this.stamp.set(Calendar.SECOND, second);
       timeStamp = this.stamp.getTime();
-      System.out.println(this);
    }
    
    public int get(int field)
@@ -93,5 +92,11 @@ public class TimeStamp
    public String toString()
    {
       return dateFormat.format(timeStamp);
+   }
+
+   @Override
+   public int compareTo(TimeStamp other)
+   {
+      return stamp.compareTo(other.stamp);
    }
 }
