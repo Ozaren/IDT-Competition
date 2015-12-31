@@ -32,9 +32,10 @@ public class Main
          String gpxLocation = "E:\\Dropbox\\IDT\\Competition Info\\IDT_Winter_2016_Contest_Code\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx";
          GPS gps = GPXReader.load(gpxLocation);
          Package pack = new Package(user, "Music CD", 153481438, gps);
-         System.out.println(user + "\n");
-         System.out.println(pack.getGps() + "\n");
-         System.out.println(pack + "\n");
+         for(int i = 0; i < gps.getNumberOfPoints(); i++)
+         {
+            System.out.println(gps.getPoint(i));
+         }
       }
       catch(InvalidUserNameException | FileNotFoundException | XMLStreamException e)
       {

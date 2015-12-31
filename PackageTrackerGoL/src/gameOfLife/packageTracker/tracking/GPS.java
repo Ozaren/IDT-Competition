@@ -21,6 +21,14 @@ public class GPS
       this.name = name;
    }
    
+   public int getNumberOfPoints() {
+      return points.size();
+   }
+   
+   public int getNumberOfWayPoints() {
+      return wayPoints.size();
+   }
+   
    public Point getPoint(int i)
    {
       return points.get(i);
