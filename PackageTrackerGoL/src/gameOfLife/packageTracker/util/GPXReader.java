@@ -16,11 +16,6 @@ import gameOfLife.packageTracker.tracking.GPS;
 
 public class GPXReader
 {
-   public static void main(String[] args) throws FileNotFoundException, XMLStreamException
-   {
-      load("E:\\Dropbox\\IDT\\Competition Info\\IDT_Winter_2016_Contest_Code\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx");
-   }
-   
    private static XMLStreamReader reader;
    private static File            xmlfile;
    private static XMLInputFactory factory;
