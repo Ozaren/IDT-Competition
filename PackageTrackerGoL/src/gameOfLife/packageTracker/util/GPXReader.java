@@ -22,6 +22,7 @@ public class GPXReader
                                   
    public static GPS load(String xmlloc) throws FileNotFoundException, XMLStreamException
    {
+      xmlloc = new File(xmlloc).getAbsolutePath().replace("\\..", "");
       return load(new File(xmlloc));
    }
    

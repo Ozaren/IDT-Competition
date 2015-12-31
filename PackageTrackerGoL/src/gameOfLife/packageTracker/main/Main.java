@@ -29,12 +29,13 @@ public class Main
       try
       {
          User user = new User("Krishna", "Ozaren", "Password");
-         String gpxLocation = "E:\\Dropbox\\IDT\\Competition Info\\IDT_Winter_2016_Contest_Code\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx";
+//       for the gpx files, if you want to test other ones just put in the name of the file instead of the <name>.gpx
+         String gpxLocation = "..\\..\\..\\..\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx";
          GPS gps = GPXReader.load(gpxLocation);
          Package pack = new Package(user, "Music CD", 153481438, gps);
          for(int i = 0; i < gps.getNumberOfPoints(); i++)
          {
-            System.out.println(gps.getPoint(i));
+            System.out.println(pack.getGps().getPoint(i));
          }
       }
       catch(InvalidUserNameException | FileNotFoundException | XMLStreamException e)
