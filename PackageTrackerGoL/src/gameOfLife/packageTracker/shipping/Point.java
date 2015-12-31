@@ -10,18 +10,19 @@ import gameOfLife.packageTracker.tracking.TimeStamp;
  */
 public class Point
 {
-   private double latitude, longtitude;
+   private double    latitude, longtitude, elevation;
    private TimeStamp timeStamp;
-   
+                     
    public Point()
    {
-      this(0, 0 , null);
+      this(0, 0, 0, null);
    }
    
-   public Point(double latitude, double longtitude , String timeStamp)
+   public Point(double latitude, double longtitude, double elevation, String timeStamp)
    {
       this.latitude = latitude;
       this.longtitude = longtitude;
+      this.elevation = elevation;
       this.timeStamp = new TimeStamp(timeStamp);
    }
    
@@ -33,6 +34,11 @@ public class Point
    public double getLongtitude()
    {
       return longtitude;
+   }
+   
+   public double getElevation()
+   {
+      return elevation;
    }
    
    public TimeStamp getTimeStamp()
@@ -53,6 +59,6 @@ public class Point
    @Override
    public String toString()
    {
-      return String.format("%.3f %s  %.3f %s T-%s", Math.abs(latitude), latitude > 0 ? "E" : "W", Math.abs(longtitude), longtitude > 0 ? "N" : "S" , timeStamp);
+      return String.format("Location: %.3f %s  %.3f %s\tElevation: %.0f\tT-%s", Math.abs(latitude), latitude > 0 ? "E" : "W", Math.abs(longtitude), longtitude > 0 ? "N" : "S", elevation, timeStamp);
    }
 }

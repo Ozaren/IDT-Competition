@@ -35,7 +35,7 @@ public class GPXReader
    
    private static class Tag
    {
-      static String longtitude, latitude, timeStamp;
+      static String longtitude, latitude, elevation, timeStamp;
    }
    
    private static GPS load() throws FileNotFoundException, XMLStreamException
@@ -80,13 +80,16 @@ public class GPXReader
                   case "name":
                      gps = new GPS(text);
                      break;
+                  case "ele":
+                     Tag.elevation = text;
+                     break;
                   case "time":
                      Tag.timeStamp = text;
                      break;
                   case "trkpt":
                      try
                      {
-                        gps.addPoint(new Point(Double.valueOf(Tag.latitude), Double.valueOf(Tag.longtitude), Tag.timeStamp));
+                        gps.addPoint(new Point(Double.valueOf(Tag.latitude), Double.valueOf(Tag.longtitude), Double.valueOf(Tag.elevation), Tag.timeStamp));
                      }
                      catch(NumberFormatException | DuplicateName e)
                      {
