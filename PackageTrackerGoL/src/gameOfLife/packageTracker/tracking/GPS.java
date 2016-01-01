@@ -1,10 +1,8 @@
 package gameOfLife.packageTracker.tracking;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
-import org.omg.PortableServer.POA;
 
 import gameOfLife.packageTracker.shipping.Point;
 import gameOfLife.packageTracker.util.Utilities;
@@ -15,7 +13,6 @@ public class GPS
    public final long         id;
    public final String       name;
    private ArrayList<Point>  points, wayPoints;
-   private ArrayList<Double> distances, speeds, wdistances, wspeeds;
                              
    public GPS(String name)
    {
