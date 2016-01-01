@@ -71,6 +71,10 @@ public class TimeStamp implements Comparable<TimeStamp>
       return get(Calendar.YEAR);
    }
    
+   public long toMillisecondsSeconds() {
+      return stamp.getTimeInMillis();
+   }
+   
    public DateFormat getDateFormat()
    {
       return dateFormat;

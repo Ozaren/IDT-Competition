@@ -9,6 +9,7 @@ import gameOfLife.packageTracker.shipping.Package;
 import gameOfLife.packageTracker.shipping.User;
 import gameOfLife.packageTracker.tracking.GPS;
 import gameOfLife.packageTracker.util.GPXReader;
+import gameOfLife.packageTracker.util.Utilities;
 
 /**
  * Main method only<br>
@@ -33,9 +34,11 @@ public class Main
          String gpxLocation = "..\\..\\..\\..\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx";
          GPS gps = GPXReader.load(gpxLocation);
          Package pack = new Package(user, "Music CD", 153481438, gps);
-         for(int i = 0; i < gps.getNumberOfPoints(); i++)
+         Utilities.convertDistance = Utilities.ConvertDistance.MILE;
+         Utilities.convertTime = Utilities.ConvertTime.HOUR;
+         for(double d : pack.getGps().getSpeeds())
          {
-            System.out.println(pack.getGps().getPoint(i));
+            System.out.printf("%8.5f\n", d);
          }
       }
       catch(InvalidUserNameException | FileNotFoundException | XMLStreamException e)

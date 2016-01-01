@@ -1,18 +1,22 @@
 package gameOfLife.packageTracker.tracking;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
+import org.omg.PortableServer.POA;
 
 import gameOfLife.packageTracker.shipping.Point;
+import gameOfLife.packageTracker.util.Utilities;
 
 public class GPS
 {
-   private static long nextID = 0;
-   public final long id;
-   public final String name;
-   private ArrayList<Point> points, wayPoints;
-   
+   private static long       nextID = 0;
+   public final long         id;
+   public final String       name;
+   private ArrayList<Point>  points, wayPoints;
+   private ArrayList<Double> distances, speeds, wdistances, wspeeds;
+                             
    public GPS(String name)
    {
       id = ++nextID;
@@ -21,11 +25,13 @@ public class GPS
       this.name = name;
    }
    
-   public int getNumberOfPoints() {
+   public int getNumberOfPoints()
+   {
       return points.size();
    }
    
-   public int getNumberOfWayPoints() {
+   public int getNumberOfWayPoints()
+   {
       return wayPoints.size();
    }
    
@@ -37,6 +43,32 @@ public class GPS
    public Point getWayPoint(int i)
    {
       return wayPoints.get(i);
+   }
+   
+   public ArrayList<Double> getDistances()
+   {
+      ArrayList<Double> arrayList = new ArrayList<>();
+      Point last = null;
+      for(Point point : points)
+      {
+         if(last != null)
+            arrayList.add(Utilities.measureDistance(point, last));
+         last = point;
+      }
+      return arrayList;
+   }
+   
+   public ArrayList<Double> getSpeeds()
+   {
+      ArrayList<Double> arrayList = new ArrayList<>();
+      Point last = null;
+      for(Point point : points)
+      {
+         if(last != null)
+            arrayList.add(Utilities.measureSpeed(point, last));
+         last = point;
+      }
+      return arrayList;
    }
    
    public void addPoint(Point point) throws DuplicateName

@@ -61,4 +61,13 @@ public class Point
    {
       return String.format("Location: %.3f %s  %.3f %s\tElevation: %.0f\tT-%s", Math.abs(latitude), latitude > 0 ? "E" : "W", Math.abs(longtitude), longtitude > 0 ? "N" : "S", elevation, timeStamp);
    }
+
+   public double getDistance(Point last)
+   {
+      double dx , dy , dz;
+      dx = longtitude - last.longtitude;
+      dy = latitude - last.latitude;
+      dz = elevation - last.elevation;
+      return Math.sqrt(dx * dx + dy * dy + dz * dz);
+   }
 }
