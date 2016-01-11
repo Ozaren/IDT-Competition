@@ -11,19 +11,21 @@ import gameOfLife.packageTracker.tracking.GPS;
 import gameOfLife.packageTracker.util.GPXReader;
 import static gameOfLife.packageTracker.util.Utilities.*;
 
+
 /**
  * Main method only<br>
- * Starts the application
- * 
+ * Starts the application.
+ * Currently implements a test User and test GPS files
+ *
  * @author Krishna
- *         
  */
 public class Main
 {
+   
    /**
-    * <b><i>Only</b></i> to start the application
-    * 
-    * @param args
+    * <b><i>Only</b></i> to start the application.
+    *
+    * @param args the arguments
     */
    public static void main(String[] args)
    {
