@@ -8,7 +8,7 @@ import gameOfLife.packageTracker.exceptions.InvalidUserNameException.InvalidUser
 
 public class User
 {
-   private final HashMap<String , User> users = new HashMap<>();
+   private static final HashMap<String , User> users = new HashMap<>();
                                               
    //never return a decrypted password
    private String                       password;

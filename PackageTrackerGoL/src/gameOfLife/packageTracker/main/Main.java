@@ -4,6 +4,12 @@ import static gameOfLife.packageTracker.util.Utilities.convertDistance;
 import static gameOfLife.packageTracker.util.Utilities.convertTime;
 
 import java.io.FileNotFoundException;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.Enumeration;
+import java.util.UUID;
 
 import javax.xml.stream.XMLStreamException;
 
@@ -24,14 +30,24 @@ import gameOfLife.packageTracker.util.ui.guiComputer.PackageTrackerFrame;
  */
 public class Main
 {
-   
    /**
     * <b><i>Only</b></i> to start the application.
     *
     * @param args the arguments
     */
-   public static void main(String[] args)
+   public static void main(String[] args) throws SocketException, UnknownHostException
    {
+      byte[] byteMac;
+      Enumeration<NetworkInterface> enumeration = NetworkInterface.getNetworkInterfaces();
+      do
+      {
+         NetworkInterface networkInterface = enumeration.nextElement();
+         byteMac = networkInterface.getHardwareAddress();
+      } while(byteMac == null && enumeration.hasMoreElements());
+      UUID uuid2 = UUID.nameUUIDFromBytes(byteMac);
+      NetworkInterface inter = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
+      UUID uuid1 = UUID.nameUUIDFromBytes(inter.getHardwareAddress());
+      System.out.println(new java.rmi.dgc.VMID().toString());
       new PackageTrackerFrame();
       try
       {
