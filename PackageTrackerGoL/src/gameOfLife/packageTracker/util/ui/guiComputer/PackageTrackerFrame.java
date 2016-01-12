@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
 /**
  * The Class PackageTrackerFrame. Contains every other GUI component in the project.
  * 
- * @author Jarett
+ * @author Jarett Lee
  */
 @SuppressWarnings("serial")
 public class PackageTrackerFrame extends JFrame
@@ -26,7 +26,6 @@ public class PackageTrackerFrame extends JFrame
 
 		add(new PackageTrackerLogin());
 		
-		pack();
 		setVisible(true);
 	}
 }
