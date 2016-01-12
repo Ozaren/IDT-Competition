@@ -13,19 +13,47 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class PackageTrackerFrame extends JFrame
 {
+	PackageTrackerLogin loginPanel;
+	PackageTrackerOverview overviewPanel;
+	PackageTrackerDetal detailPanel;
 	
 	public PackageTrackerFrame () {
 		setTitle("Title");
 		setSize(600, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		JPanel content = new JPanel(new GridBagLayout());
+		
 		content.setBorder(new EmptyBorder(20, 20, 20, 20));
 		
 		setContentPane(content);
-
-		add(new PackageTrackerLogin());
+		
+		loginPanel = new PackageTrackerLogin();
+		overviewPanel = new PackageTrackerOverview();
+		detailPanel = new PackageTrackerDetal();
+		
+		addLogin();
 		
 		setVisible(true);
+	}
+	
+	public void removeCurrent() {
+		if (loginPanel.getParent() == this) remove(loginPanel);
+		if (overviewPanel.getParent() == this) remove(overviewPanel);
+		if (detailPanel.getParent() == this) remove(detailPanel);
+	}
+	
+	public void addLogin() {
+		removeCurrent();
+		add(loginPanel);
+	}
+	
+	public void addOverview() {
+		removeCurrent();
+		add(overviewPanel);
+	}
+	
+	public void addDetail() {
+		removeCurrent();
+		add(detailPanel);
 	}
 }
