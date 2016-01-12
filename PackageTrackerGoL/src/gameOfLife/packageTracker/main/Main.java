@@ -4,12 +4,8 @@ import static gameOfLife.packageTracker.util.Utilities.convertDistance;
 import static gameOfLife.packageTracker.util.Utilities.convertTime;
 
 import java.io.FileNotFoundException;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.util.Enumeration;
-import java.util.UUID;
 
 import javax.xml.stream.XMLStreamException;
 
