@@ -1,5 +1,8 @@
 package gameOfLife.packageTracker.main;
 
+import static gameOfLife.packageTracker.util.Utilities.convertDistance;
+import static gameOfLife.packageTracker.util.Utilities.convertTime;
+
 import java.io.FileNotFoundException;
 
 import javax.xml.stream.XMLStreamException;
@@ -9,13 +12,13 @@ import gameOfLife.packageTracker.shipping.Package;
 import gameOfLife.packageTracker.shipping.User;
 import gameOfLife.packageTracker.tracking.GPS;
 import gameOfLife.packageTracker.util.GPXReader;
-import static gameOfLife.packageTracker.util.Utilities.*;
-
+import gameOfLife.packageTracker.util.Utilities.ConvertDistance;
+import gameOfLife.packageTracker.util.Utilities.ConvertTime;
+import gameOfLife.packageTracker.util.ui.guiComputer.PackageTrackerFrame;
 
 /**
  * Main method only<br>
- * Starts the application.
- * Currently implements a test User and test GPS files
+ * Starts the application. Currently implements a test User and test GPS files
  *
  * @author Krishna
  */
@@ -29,6 +32,7 @@ public class Main
     */
    public static void main(String[] args)
    {
+      new PackageTrackerFrame();
       try
       {
          User user = new User("Krishna", "Ozaren", "Password");
@@ -36,8 +40,8 @@ public class Main
          String gpxLocation = "..\\..\\..\\..\\gpx_files\\Annapolis_to_WestPoint_10sec.gpx";
          GPS gps = GPXReader.load(gpxLocation);
          Package pack = new Package(user, "Music CD", 153481438, gps);
-         convertDistance = ConvertDistance.MILE; // from Utilities
-         convertTime = ConvertTime.HOUR; // from Utilities
+         convertDistance = ConvertDistance.MILE;// from Utilities
+         convertTime = ConvertTime.HOUR;// from Utilities
          for(double d : pack.getGps().getSpeeds())
          {
             System.out.printf("%8.5f\n", d);
