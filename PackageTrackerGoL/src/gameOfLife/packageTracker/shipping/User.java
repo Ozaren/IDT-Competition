@@ -8,7 +8,7 @@ import gameOfLife.packageTracker.exceptions.InvalidUserNameException.InvalidUser
 
 public class User
 {
-   private final HashMap<String , User> users = new HashMap<>();
+   private static final HashMap<String , User> users = new HashMap<>();
                                               
    //never return a decrypted password
    private String                       password;
@@ -22,7 +22,7 @@ public class User
    
    public User(String name, String userName, String password, boolean encryptPassword) throws InvalidUserNameException
    {
-      if(users.containsKey(name))
+      if(users.containsKey(userName))
          throw new InvalidUserNameException(InvalidUserNameType.DUPLICATE);
       this.name = name;
       this.userName = userName;
@@ -30,6 +30,7 @@ public class User
       if(encryptPassword)
          encryptPassword();
       isPasswordEncrypted = encryptPassword;
+      users.put(userName, this);
    }
    
    public String getUserName()

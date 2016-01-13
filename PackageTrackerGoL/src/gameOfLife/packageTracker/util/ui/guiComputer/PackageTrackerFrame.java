@@ -1,12 +1,14 @@
 package gameOfLife.packageTracker.util.ui.guiComputer;
 
-import java.awt.*;
+import java.awt.GridBagLayout;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 /**
- * The Class PackageTrackerFrame. Contains every other GUI component in the project.
+ * The Class PackageTrackerFrame. Contains every other GUI component in the
+ * project.
  * 
  * @author Jarett Lee
  */
