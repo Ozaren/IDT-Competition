@@ -1,6 +1,6 @@
 package gameOfLife.packageTracker.util.ui.guiComputer;
 
-import java.awt.Panel;
+import javax.swing.JPanel;
 
 /**
  * 
@@ -8,6 +8,6 @@ import java.awt.Panel;
  *
  */
 @SuppressWarnings("serial")
-public class PackageTrackerDetal extends Panel {
+public class PackageTrackerDetail extends JPanel {
 
 }

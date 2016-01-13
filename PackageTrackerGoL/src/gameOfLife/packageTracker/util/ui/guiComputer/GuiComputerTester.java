@@ -7,7 +7,7 @@ import javax.swing.SwingUtilities;
  * @author Jarett Lee
  *
  */
-public class guiComputerTester {
+public class GuiComputerTester {
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {

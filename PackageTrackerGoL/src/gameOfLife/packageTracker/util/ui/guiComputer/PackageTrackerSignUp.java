@@ -15,14 +15,14 @@ import javax.swing.border.*;
  */
 @SuppressWarnings("serial")
 
-public class PackageTrackerLogin extends JPanel
+public class PackageTrackerSignUp extends JPanel
 {
    
-   public PackageTrackerLogin()
+   public PackageTrackerSignUp()
    {
       setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-      setBorder(new CompoundBorder(new TitledBorder("Login"), new EmptyBorder(10, 10, 10, 10)));
-         
+      setBorder(new CompoundBorder(new TitledBorder("Sign Up"), new EmptyBorder(10, 10, 10, 10)));
+      
       Font fontInput = new Font("SansSerif", Font.PLAIN, 20);
       
       BoxLayout layoutBox = new BoxLayout(this, BoxLayout.X_AXIS);
@@ -42,19 +42,7 @@ public class PackageTrackerLogin extends JPanel
       JPanel panelButton = new JPanel();
       panelButton.setAlignmentX(Component.LEFT_ALIGNMENT);
       
-      JButton buttonLogin = new JButton("Login");
       JButton buttonSignUp = new JButton("Sign Up");
-      
-      buttonLogin.addActionListener(new ActionListener()
-      {
-         
-         @Override
-         public void actionPerformed(ActionEvent arg0)
-         {
-            System.out.println("Login");
-            ((PackageTrackerFrame) getRootPane().getParent()).showOverview();
-         }
-      });
       
       buttonSignUp.addActionListener(new ActionListener()
       {
@@ -63,24 +51,11 @@ public class PackageTrackerLogin extends JPanel
          public void actionPerformed(ActionEvent arg0)
          {
             System.out.println("Sign up");
-            ((PackageTrackerFrame) getRootPane().getParent()).showSignUp();
+            ((PackageTrackerFrame) getRootPane().getParent()).showLogin();
          }
       });
       
-      panelButton.add(buttonLogin, layoutBox);
       panelButton.add(buttonSignUp, layoutBox);
-      
-      buttonSignUp.addKeyListener(new KeyAdapter()// Sets up a key bind so that enter will click the signup button
-      {
-         @Override
-         public void keyPressed(KeyEvent e)
-         {
-            if(e.getKeyCode() == KeyEvent.VK_ENTER)
-            {
-               buttonSignUp.doClick();
-            }
-         }
-      });
       
       KeyAdapter adapterKey = new KeyAdapter()// Sets up a key bind so that enter will click the login button
       {
@@ -90,7 +65,7 @@ public class PackageTrackerLogin extends JPanel
          {
             if(e.getKeyCode() == KeyEvent.VK_ENTER)
             {
-               buttonLogin.doClick();
+               buttonSignUp.doClick();
             }
          }
       };
@@ -99,8 +74,8 @@ public class PackageTrackerLogin extends JPanel
       addKeyListener(adapterKey);
       passField.addKeyListener(adapterKey);
       fieldUser.addKeyListener(adapterKey);
-      buttonLogin.addKeyListener(adapterKey);
       panelButton.addKeyListener(adapterKey);
+      buttonSignUp.addKeyListener(adapterKey);
       
       add(panelButton);
    }

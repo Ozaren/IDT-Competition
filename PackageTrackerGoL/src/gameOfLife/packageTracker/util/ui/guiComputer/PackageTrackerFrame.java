@@ -15,47 +15,64 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class PackageTrackerFrame extends JFrame
 {
-	PackageTrackerLogin loginPanel;
-	PackageTrackerOverview overviewPanel;
-	PackageTrackerDetal detailPanel;
-	
-	public PackageTrackerFrame () {
-		setTitle("Title");
-		setSize(600, 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JPanel content = new JPanel(new GridBagLayout());
-		
-		content.setBorder(new EmptyBorder(20, 20, 20, 20));
-		
-		setContentPane(content);
-		
-		loginPanel = new PackageTrackerLogin();
-		overviewPanel = new PackageTrackerOverview();
-		detailPanel = new PackageTrackerDetal();
-		
-		addLogin();
-		
-		setVisible(true);
-	}
-	
-	public void removeCurrent() {
-		if (loginPanel.getParent() == this) remove(loginPanel);
-		if (overviewPanel.getParent() == this) remove(overviewPanel);
-		if (detailPanel.getParent() == this) remove(detailPanel);
-	}
-	
-	public void addLogin() {
-		removeCurrent();
-		add(loginPanel);
-	}
-	
-	public void addOverview() {
-		removeCurrent();
-		add(overviewPanel);
-	}
-	
-	public void addDetail() {
-		removeCurrent();
-		add(detailPanel);
-	}
+   private JPanel panelLogin, panelOverview, panelDetail , panelSignUp;
+   
+   public PackageTrackerFrame()
+   {
+      setTitle("Title");
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      
+      JPanel content = (JPanel) getContentPane();
+      content.setLayout(new GridBagLayout());
+      content.setBorder(new EmptyBorder(20, 20, 20, 20));
+      
+      panelLogin = new PackageTrackerLogin();
+      panelOverview = new PackageTrackerOverview();
+      panelDetail = new PackageTrackerDetail();
+      panelSignUp = new PackageTrackerSignUp();
+      
+      showLogin();
+      
+      setVisible(true);
+   }
+   
+   public void removeCurrent()
+   {
+      if(panelLogin.getParent() == getContentPane())
+         remove(panelLogin);
+      if(panelOverview.getParent() == getContentPane())
+         remove(panelOverview);
+      if(panelDetail.getParent() == getContentPane())
+         remove(panelDetail);
+      if(panelSignUp.getParent() == getContentPane())
+         remove(panelSignUp);
+   }
+   
+   public void swapMain(JPanel panel)
+   {
+      removeCurrent();
+      add(panel);
+      pack();
+      repaint();
+   }
+   
+   public void showLogin()
+   {
+      swapMain(panelLogin);
+   }
+   
+   public void showOverview()
+   {
+      swapMain(panelOverview);
+   }
+   
+   public void showDetail()
+   {
+      swapMain(panelDetail);
+   }
+
+   public void showSignUp()
+   {
+      swapMain(panelSignUp);
+   }
 }
