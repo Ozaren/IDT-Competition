@@ -12,7 +12,7 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class PackageTrackerOverview extends JPanel
 {
-   JScrollPane packageList;
+   JPanel packageListView;
    
    public PackageTrackerOverview()
    {
@@ -26,9 +26,23 @@ public class PackageTrackerOverview extends JPanel
       
       add(new OverviewTracker());
       
-      packageList = new JScrollPane();
+      packageListView = new JPanel();
+      packageListView.setLayout(new BoxLayout(packageListView, BoxLayout.Y_AXIS));
+      JScrollPane packageList = new JScrollPane(packageListView);
+      
+      loadPackageListComp();
+      
       add(packageList);
       
       
+   }
+   
+   public void loadPackageListComp()
+   {
+	   packageListView.add(new JPanelOverviewElement());
+	   packageListView.add(new JPanelOverviewElement());
+	   packageListView.add(new JPanelOverviewElement());
+	   packageListView.add(new JPanelOverviewElement());
+	   packageListView.add(new JPanelOverviewElement());
    }
 }

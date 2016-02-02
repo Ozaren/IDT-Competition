@@ -50,7 +50,7 @@ public class PackageTrackerSignUp extends JPanel
          @Override
          public void actionPerformed(ActionEvent arg0)
          {
-            System.out.println("Sign up");
+//            System.out.println("Sign up");
             ((PackageTrackerFrame) getRootPane().getParent()).showLogin();
          }
       });

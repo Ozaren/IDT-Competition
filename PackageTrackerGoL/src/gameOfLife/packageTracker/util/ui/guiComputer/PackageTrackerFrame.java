@@ -1,9 +1,8 @@
 package gameOfLife.packageTracker.util.ui.guiComputer;
 
-import java.awt.GridBagLayout;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import gameOfLife.packageTracker.util.ui.guiComputer.overview.PackageTrackerOverview;
@@ -52,10 +51,13 @@ public class PackageTrackerFrame extends JFrame
    
    public void swapMain(JPanel panel)
    {
+	  setVisible(false);
       removeCurrent();
       add(panel);
       pack();
+      setLocationRelativeTo(null);
       repaint();
+      setVisible(true);
    }
    
    public void showLogin()

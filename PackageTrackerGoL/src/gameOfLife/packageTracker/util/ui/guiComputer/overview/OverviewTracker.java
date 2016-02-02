@@ -15,6 +15,10 @@ public class OverviewTracker extends JPanel
 	      
 	      setLayout(new GridBagLayout());
 	      
+	      setBorder(BorderFactory.createCompoundBorder(
+					BorderFactory.createEmptyBorder(0, 0, 6, 0),
+					BorderFactory.createLineBorder(Color.black)));
+	      
 	      GridBagConstraints gbc;
 	      
 	      gbc = creategbc(0, 0);

@@ -51,7 +51,7 @@ public class PackageTrackerLogin extends JPanel
          @Override
          public void actionPerformed(ActionEvent arg0)
          {
-            System.out.println("Login");
+//            System.out.println("Login");
             ((PackageTrackerFrame) getRootPane().getParent()).showOverview();
          }
       });
@@ -62,7 +62,7 @@ public class PackageTrackerLogin extends JPanel
          @Override
          public void actionPerformed(ActionEvent arg0)
          {
-            System.out.println("Sign up");
+//            System.out.println("Sign up");
             ((PackageTrackerFrame) getRootPane().getParent()).showSignUp();
          }
       });
