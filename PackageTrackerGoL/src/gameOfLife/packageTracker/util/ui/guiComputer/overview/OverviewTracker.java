@@ -27,6 +27,7 @@ public class OverviewTracker extends JPanel
 		
 		GridBagConstraints gbc;
 		
+		// Log Out Button
 		
 		JButton buttonLogOut = new JButton("Log Out");
 		
@@ -41,6 +42,8 @@ public class OverviewTracker extends JPanel
 		
 		gbc = creategbc(2, 0);
 		add(buttonLogOut, gbc);
+		
+		// Package Creation Components
 		
 		gbc = creategbc(0, 1);
 		add(new JLabel("Get Package: "), gbc);

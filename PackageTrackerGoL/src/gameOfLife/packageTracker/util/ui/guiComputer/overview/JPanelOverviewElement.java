@@ -11,6 +11,7 @@ public class JPanelOverviewElement extends JPanel {
 	JLabel labelName;
 	JLabel labelUUID;
 	JLabel labelStatus;
+	JLabel labelETA;
 	
 	public JPanelOverviewElement() {
 		Dimension dimension = new Dimension(574, 150);
@@ -34,6 +35,10 @@ public class JPanelOverviewElement extends JPanel {
 		
 		gbc = creategbc(0, 2);
 		labelStatus = new JLabel("Status: ");
+		add(labelStatus, gbc);
+		
+		gbc = creategbc(0, 4);
+		labelETA = new JLabel("ETA: ");
 		add(labelStatus, gbc);
 	}
 		 
@@ -61,5 +66,9 @@ public class JPanelOverviewElement extends JPanel {
 		labelUUID.setText("UUID: " + uuid);
 	}
 	
+	public void setETA(String eta)
+	{
+		labelETA.setText("ETA: " + eta);
+	}
 	
 }
