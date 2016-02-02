@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import gameOfLife.packageTracker.util.ui.guiComputer.overview.PackageTrackerOverview;
+
 /**
  * The Class PackageTrackerFrame. Contains every other GUI component in the
  * project.

@@ -1,4 +1,4 @@
-package gameOfLife.packageTracker.util.ui.guiComputer;
+package gameOfLife.packageTracker.util.ui.guiComputer.overview;
 
 import java.awt.Dimension;
 
@@ -19,5 +19,7 @@ public class PackageTrackerOverview extends JPanel
       setPreferredSize(dimension);
       setMinimumSize(dimension);
       setMaximumSize(dimension);
+      
+      
    }
 }
