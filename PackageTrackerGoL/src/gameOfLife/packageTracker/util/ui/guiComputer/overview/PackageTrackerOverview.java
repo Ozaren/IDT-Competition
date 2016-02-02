@@ -1,8 +1,8 @@
 package gameOfLife.packageTracker.util.ui.guiComputer.overview;
 
-import java.awt.Dimension;
+import java.awt.*;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * 
@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PackageTrackerOverview extends JPanel
 {
+   JScrollPane packageList;
+   
    public PackageTrackerOverview()
    {
       Dimension dimension = new Dimension(600, 600);
@@ -19,6 +21,13 @@ public class PackageTrackerOverview extends JPanel
       setPreferredSize(dimension);
       setMinimumSize(dimension);
       setMaximumSize(dimension);
+      
+      setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+      
+      add(new OverviewTracker());
+      
+      packageList = new JScrollPane();
+      add(packageList);
       
       
    }
