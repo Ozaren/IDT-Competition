@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="packageDeliveryApp"
+	ng-controller="mainController">
+	<head>
+		<title>IDT Package Tracking System</title>
+		<!--       <meta http-equiv="Pragma" content="no-cache"> -->
+		<!-- <meta http-equiv="Cache-Control" content="no-cache"> -->
+		<!-- <meta http-equiv="Expires" content="Sat, 01 Dec 2021 00:00:00 GMT"> -->
+				
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="UTF-8">
+		
+		<!-- load bootstrap and fontawesome via CDN -->
+		<link rel="stylesheet"
+			href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<style>
+			html, body, input, select {
+				font-size: 1.0em !important;
+			}
+			
+			.logo-small {
+				color: #f4511e;
+				font-size: 15px;
+			}
+			
+			.logo {
+				color: #f4511e;
+				font-size: 50px;
+			}
+			
+			.margin-top10 {
+				margin-top: 10px;
+			}
+			
+			.margin-top80 {
+				margin-top: 80px;
+			}
+			
+			.margin-left20 {
+				margin-left: 20px;
+			}
+			
+			textarea:-ms-input-placeholder {
+				color: grey !important;
+				font-style: italic;
+				font-size: smaller
+			}
+		</style>
+		
+		<!-- load angular via CDN -->
+		<script src="https://code.angularjs.org/1.3.0-rc.2/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
+		<script src="https://code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
+		<script src="app.js"></script>
+		<script src="routes.js"></script>
+		<script src="services.js"></script>
+		<script src="controllers.js"></script>
+		<script async defer
+			src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDI4De5BFgTe-2AKMfTB6VlghFoldVXgD4"></script>		
+	</head>
+	
+	<body>	
+		<header>
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<span class="glyphicon glyphicon-globe logo"></span>
+					</div>					
+					<a class="navbar-brand" style="margin-left: 10px;" href="#" ng-click="clearUserMode()">
+							IDT Package Tracking System</a>
+	
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" ng-click="clearUserMode()"><i class="fa fa-home"></i> Home</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+	
+		<div class="container">	
+			<div ng-view></div>	
+		</div>	
+	</body>
+</html>
