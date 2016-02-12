@@ -1,11 +1,5 @@
 # IDT-Competition
 
+Submission by team Game of Life
 
-# Instalation Guide
-
-Basic
-- JDK http://www.oracle.com/technetwork/java/javase/downloads/index.html
-
-Git
-- https://git-for-windows.github.io/
-- http://www.eclipse.org/egit/download/
+Open the PackageTrackerGoL folder
