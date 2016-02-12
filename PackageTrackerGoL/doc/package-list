@@ -1,0 +1,7 @@
+com.dit.report
+com.dit.report.controller
+com.dit.report.dataModel
+com.dit.report.domain
+com.dit.report.service
+com.dit.report.service.exception
+com.dit.report.util

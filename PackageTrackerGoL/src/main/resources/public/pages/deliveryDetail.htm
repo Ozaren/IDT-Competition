@@ -1,0 +1,45 @@
+<h4>
+	<a href="#/" ng-click="stopDDInterval()"><span class="glyphicon glyphicon-arrow-left" style="margin-right:3px"></span>Back</a>
+</h4>
+
+<div class="row">
+	<div class="col-sm-6" style="background-color: lavender;">
+		<table class="table table-hover table-condensed">
+			<thead>
+				<tr>
+					<th>   </th>					
+					<th>Package</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="x in weatherResult | filter:filterArray">	
+					<td>
+						<button type="button" class="btn btn-info btn-sm logo-small"
+							ng-click="initMap(x.uuid, x.destinationLat, x.destinationLon, x.status)">
+				          <span class="glyphicon glyphicon-globe"></span> Map
+				        </button>				        
+				        <span class="glyphicon glyphicon-star-empty logo-small" ng-show="x.uuid==selectedUuid"></span>
+					
+					</td>				
+					<td> 
+						<div>uuid  <span class="pull-right">{{x.uuid}}</span></div>
+						<div>distance to travel <span class="pull-right">{{x.distance2Travel | number:1}}</span></div>
+						<div>delivery time  <span class="pull-right">{{x.estimatedDeliverTime}}</span></div>
+						
+					</td>					 
+					<td>{{x.status}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<!-- span class="margin-left20" ng-show="selectedUuid!=null">uuid: {{selectedUuid}}</span -->
+		<div id="map" class="col-sm-5 margin-left20" style="height:500px">
+			
+		</div>	
+	</div>
+
+		
+</div>
+
