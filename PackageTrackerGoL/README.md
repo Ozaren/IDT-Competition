@@ -8,7 +8,10 @@ Requirements
 
 Quick start
 -----------
-cd C:\Users\cladmin\workspace\IPTRS
+Run from Command Prompt and Web Browser
+
+cd C:\path\to\IDT-Competition\PackageTrackerGoL\src\IPTRS
+
 1. mvn package
 2. java -jar target/dit-spring-boot-rest-1.0-SNAPSHOT.jar
 3. run PackageEventsSimulator.groovy
