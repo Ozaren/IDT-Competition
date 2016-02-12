@@ -9,7 +9,7 @@ Requirements
 Quick start
 -----------
 cd C:\Users\cladmin\workspace\IPTRS
-1. mvn package
-2. java -jar target/dit-spring-boot-rest-1.0-SNAPSHOT.jar
-3. run PackageEventsSimulator.groovy
-4. Point your browser to http://localhost:8080/index.htm
+ 1. mvn package
+ 2. java -jar target/dit-spring-boot-rest-1.0-SNAPSHOT.jar
+ 3. run PackageEventsSimulator.groovy
+ 4. Point your browser to http://localhost:8080/index.htm
