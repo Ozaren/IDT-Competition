@@ -1,3 +1,0 @@
-This project is for the IDT 2015-2016 competition
-
-We are to create a package tracking software that tracks a package with a GPS attached to it.
