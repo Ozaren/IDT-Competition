@@ -2,4 +2,4 @@
 
 Submission by team Game of Life
 
-Open the PackageTrackerGoL folder
+Open the PackageTrackerGoL folder and read the README.
